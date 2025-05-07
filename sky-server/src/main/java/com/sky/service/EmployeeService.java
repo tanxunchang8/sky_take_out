@@ -40,4 +40,20 @@ public interface EmployeeService {
      * @return: void
      **/
     void startOrStop(Integer status, Long id);
+    /*
+     * @description:根据id查询员工信息
+     * @Author: tan 
+     * @Date: 2025/5/7 10:32
+     * @Param : 
+     * @return: com.sky.entity.Employee
+     **/
+    Employee getById(Long id);
+    /*
+     * @description:
+     * @Author: tan
+     * @Date: 2025/5/7 11:03
+     * @Param :
+     * @return: void
+     **/
+    void update(EmployeeDTO employeeDTO);
 }

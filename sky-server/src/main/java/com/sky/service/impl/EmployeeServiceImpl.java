@@ -26,7 +26,6 @@ import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-
     @Autowired
     private EmployeeMapper employeeMapper;
 
@@ -128,6 +127,35 @@ public class EmployeeServiceImpl implements EmployeeService {
                 .status(status)
                 .id(id)
                 .build();
+        employeeMapper.update(employee);
+    }
+
+    /*
+     * @description:根据id查询员工信息
+     * @Author: tan
+     * @Date: 2025/5/7 10:32
+     * @Param :
+     * @return: com.sky.entity.Employee
+     **/
+    @Override
+    public Employee getById(Long id) {
+        Employee employee = employeeMapper.getById(id);
+        employee.setPassword("******");
+        return employee;
+    }
+    /*
+     * @description:
+     * @Author: tan
+     * @Date: 2025/5/7 11:04
+     * @Param :
+     * @return: void
+     **/
+    public void update(EmployeeDTO employeeDTO) {
+        Employee employee = new Employee();
+        BeanUtils.copyProperties(employeeDTO, employee);
+
+        employee.setUpdateTime(LocalDateTime.now());
+        employee.setUpdateUser(BaseContext.getCurrentId());
         employeeMapper.update(employee);
     }
 }
