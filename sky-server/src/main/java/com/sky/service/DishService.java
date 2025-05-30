@@ -7,6 +7,8 @@ import com.sky.entity.Dish;
 import com.sky.result.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 /**
  * @FileName DishService
  * @Description
@@ -33,4 +35,13 @@ public interface DishService {
      * @return: com.sky.result.PageResult
      **/
     PageResult pageQuery(DishPageQueryDTO dishPageQueryDTO);
+
+    /*
+     * @description: 菜品批量删除
+     * @Author: tan
+     * @Date: 2025/5/30 22:36
+     * @Param :
+     * @return: void
+     **/
+    void deleteBatch(List<Long> ids);
 }

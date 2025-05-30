@@ -12,6 +12,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @BelongsProject: sky-take-out
  * @BelongsPackage: com.sky.controller.admin
@@ -58,5 +60,21 @@ public class DishController {
         PageResult pageResult = dishService.pageQuery(dishPageQueryDTO);
 
         return Result.success(pageResult);
+    }
+
+    /*
+     * @description: 菜品批量删除
+     * @Author: tan
+     * @Date: 2025/5/30 22:34
+     * @Param :
+     * @return: com.sky.result.Result
+     **/
+    @DeleteMapping
+    @ApiOperation("菜品批量删除")
+    public Result delete(@RequestParam List<Long> ids){
+        log.info("菜品批量删除: {}",ids);
+        dishService.deleteBatch(ids);
+
+        return Result.success();
     }
 }
