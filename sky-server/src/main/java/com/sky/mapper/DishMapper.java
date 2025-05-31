@@ -10,6 +10,8 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface DishMapper {
 
@@ -60,4 +62,14 @@ public interface DishMapper {
      */
     @Delete("delete from dish where id = #{id}")
     void deleteById(Long id);
+
+    /**
+     * description: 根据菜品id集合批量删除菜品
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/5/31 21:09
+     * @Param ids:
+     * @return: void
+     */
+    void deleteByIds(List<Long> ids);
 }
