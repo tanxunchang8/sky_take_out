@@ -72,4 +72,15 @@ public interface DishMapper {
      * @return: void
      */
     void deleteByIds(List<Long> ids);
+
+    /**
+     * description: 根据id动态修改菜品
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/5/31 21:48
+     * @Param dish:
+     * @return: void
+     */
+    @AutoFill(value = OperationType.UPDATE)
+    void update(Dish dish);
 }
