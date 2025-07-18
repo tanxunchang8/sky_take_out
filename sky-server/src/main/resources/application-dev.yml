@@ -5,7 +5,7 @@ sky:
     port: 3306
     database: sky_take_out
     username: root
-    password: 86719858t
+    password: ********
   alioss:
     endpoint:
     access-key-id:
@@ -14,11 +14,11 @@ sky:
   redis:
     host: localhost
     port: 6379
-    password: 86719858t
-    database: 10
+    password: *****
+    database: **
   wechat:
-    appid: wxb51a56711dec620d
-    secret: 1f529f938eec7da14df6adb62d598869
+    appid: *************
+    secret: ***************
 
 
 
