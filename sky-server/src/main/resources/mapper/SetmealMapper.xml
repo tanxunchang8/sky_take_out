@@ -5,7 +5,7 @@
 
 
     <!--    修改套餐表-->
-    <update id="update">
+    <update id="update" parameterType="Setmeal">
         update setmeal
         <set>
             <if test="name != null"> name = #{name}, </if>
