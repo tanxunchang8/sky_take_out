@@ -57,5 +57,19 @@ public class ShoppingCartController {
         return Result.success(list);
     }
 
+    /**
+     * description: 清空购物车
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/7/20 21:08
+     * @return: com.sky.result.Result
+     */
+    @DeleteMapping("/clean")
+    @ApiOperation("清空购物车")
+    public Result clean(){
+        shoppingCartService.cleanShoppingCart();
+        return Result.success();
+    }
+
 
 }
