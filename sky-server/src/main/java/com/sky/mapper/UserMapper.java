@@ -33,4 +33,15 @@ public interface UserMapper {
      * @return: void
      */
     void insert(User user);
+
+    /**
+     * description: 根据id查询用户
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/7/27 22:35
+     * @Param userId:
+     * @return: com.sky.entity.User
+     */
+    @Select("select * from user where id = #{id};")
+    User getById(Long userId);
 }
