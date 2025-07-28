@@ -5,6 +5,9 @@ import com.sky.entity.Orders;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 /**
  * @FileName OderMapper
  * @Description: TODO
@@ -36,6 +39,18 @@ public interface OrderMapper {
      * @param orders
      */
     void update(Orders orders);
+
+    /**
+     * description: 根据订单状态和下单时间查询订单
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/7/28 22:53
+     * @Param status: 
+     * @Param orderTime: 
+     * @return: java.util.List<com.sky.entity.Orders>
+     */
+    @Select("select * from orders where status = #{status} and order_time < #{orderTime}")
+    List<Orders> getByStatusAndOrderTime(Integer status, LocalDateTime orderTime);
 
 
 }
