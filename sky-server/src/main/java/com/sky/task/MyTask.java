@@ -24,8 +24,8 @@ public class MyTask {
      * @date: 2025/7/28 22:39
      * @return: void
      */
-    @Scheduled(cron = "0/5 * * * * ?")
-    public void executeTask(){
-        log.info("定时任务开始执行 : {}",new Date());
-    }
+//    @Scheduled(cron = "0/5 * * * * ?")
+//    public void executeTask(){
+//        log.info("定时任务开始执行 : {}",new Date());
+//    }
 }
