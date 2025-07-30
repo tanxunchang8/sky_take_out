@@ -36,4 +36,14 @@ public interface OrderService {
      * @param outTradeNo
      */
     void paySuccess(String outTradeNo);
+
+    /**
+     * description: 客户催单
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/7/30 22:12
+     * @Param id:
+     * @return: void
+     */
+    void reminder(Long id);
 }

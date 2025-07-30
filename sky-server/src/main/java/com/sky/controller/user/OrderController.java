@@ -58,4 +58,20 @@ public class OrderController {
         log.info("生成预支付交易单：{}", orderPaymentVO);
         return Result.success(orderPaymentVO);
     }
+
+    /**
+     * description: 客户催单
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/7/30 22:10
+     * @Param id:
+     * @return: com.sky.result.Result
+     */
+    @GetMapping("/reminder/{id}")
+    @ApiOperation("客户催单")
+    public Result reminder(@PathVariable("id") Long id){
+
+        orderService.reminder(id);
+        return Result.success();
+    }
 }
