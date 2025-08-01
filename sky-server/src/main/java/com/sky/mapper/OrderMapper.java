@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @FileName OderMapper
@@ -78,4 +79,13 @@ public interface OrderMapper {
     Orders getById(Long id);
 
 
+    /**
+     * description: 根据动态条件统计营业额数据
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/8/1 20:45
+     * @Param map:
+     * @return: java.lang.Double
+     */
+    Double sumByMap(Map map);
 }
