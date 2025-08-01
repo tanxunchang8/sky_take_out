@@ -4,6 +4,8 @@ import com.sky.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.Map;
+
 /**
  * @FileName UserMapper
  * @Description: 用户mapper接口
@@ -44,4 +46,14 @@ public interface UserMapper {
      */
     @Select("select * from user where id = #{id};")
     User getById(Long userId);
+
+    /**
+     * description: 根据动态条件统计用户数量
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/8/1 21:17
+     * @Param map:
+     * @return: java.lang.Integer
+     */
+    Integer countByMap(Map map);
 }
