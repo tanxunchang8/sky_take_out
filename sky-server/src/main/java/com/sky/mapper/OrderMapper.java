@@ -88,4 +88,14 @@ public interface OrderMapper {
      * @return: java.lang.Double
      */
     Double sumByMap(Map map);
+
+    /**
+     * description: 根据动态条件统计订单数量
+     * @since: 1.0.0
+     * @author: tan
+     * @date: 2025/8/3 09:03
+     * @Param map:
+     * @return: java.lang.Integer
+     */
+    Integer countByMap(Map map);
 }
